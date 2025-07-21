@@ -1,11 +1,11 @@
 import express from 'express'
-import upload from '../multer/multerConfig'
-import { login, register } from '../controllers/auth'
-import verifyToken from '../middleware/auth'
+import { login, register } from '../controllers/auth.js'
+import verifyToken from '../middleware/auth.js'
+import upload from '../middleware/uploadFile.js'
 const router = express()
 
-router.post('auth/register',upload.single('picture'),verifyToken,register)
-router.post('auth/login',verifyToken,login)
+router.post('/register',upload.single('photo'),verifyToken,register)
+router.post('/login',verifyToken,login)
 
 
 export default router

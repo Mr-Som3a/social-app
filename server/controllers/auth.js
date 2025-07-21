@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import Jwt from "jsonwebtoken";
-import User from "../model/user";
+import User from "../model/user.js";
 
 // Register User
 export const register = async (req, res, next) => {
@@ -56,5 +56,3 @@ export const login = async (req, res, next) => {
     res.status(400).json({error:err.message})
   }
 };
-
-export default Auth;

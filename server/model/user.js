@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 
 const userSchema = new mongoose.Schema({
-    fristName:{
+    firstName:{
         type:String,
         required: true,
         min:2,
